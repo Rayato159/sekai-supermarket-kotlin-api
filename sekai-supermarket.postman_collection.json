@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "7b0d949c-d695-4c91-ac65-6f6c35799fb6",
+		"name": "sekai-supermarket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18192292",
+		"_collection_link": "https://bold-water-751143.postman.co/workspace/work~a08f3def-a6f7-4c13-857c-5a78b9e700a4/collection/18192292-7b0d949c-d695-4c91-ac65-6f6c35799fb6?action=share&source=collection_link&creator=18192292"
+	},
+	"item": [
+		{
+			"name": "find products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 - ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1234/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 11 Aug 2023 16:35:48 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-length",
+							"value": "316"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"P-000001\",\n        \"title\": \"Water\",\n        \"description\": \"Pure water\"\n    },\n    {\n        \"id\": \"P-000002\",\n        \"title\": \"Potato\",\n        \"description\": \"Fresh potato\"\n    },\n    {\n        \"id\": \"P-000003\",\n        \"title\": \"Juice\",\n        \"description\": \"Fresh orange juice\"\n    },\n    {\n        \"id\": \"P-000004\",\n        \"title\": \"Milk\",\n        \"description\": \"Whole milk\"\n    },\n    {\n        \"id\": \"P-000005\",\n        \"title\": \"Soda\",\n        \"description\": \"Cola flavor\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "find product by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/product/:productId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"product",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 - ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1234/product/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 11 Aug 2023 16:47:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-length",
+							"value": "60"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"P-000001\",\n    \"title\": \"Water\",\n    \"description\": \"Pure water\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Sword\",\r\n    \"description\": \"Wait!!! this is for isekai only.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201 - created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Sword\",\r\n    \"description\": \"Wait!!! this is for isekai only.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1234/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 11 Aug 2023 16:49:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-length",
+							"value": "82"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"P-000006\",\n    \"title\": \"Sword\",\n    \"description\": \"Wait!!! this is for isekai only.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update product",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Sword\",\r\n    \"description\": \"Wait!!! this is for isekai only.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1234/product/:productId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"product",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "P-000001"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 - ok",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Sword\",\r\n    \"description\": \"Wait!!! this is for isekai only.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1234/product/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "P-000001"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 11 Aug 2023 16:49:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-length",
+							"value": "82"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"P-000001\",\n    \"title\": \"Sword\",\n    \"description\": \"Wait!!! this is for isekai only.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/product/:productId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"product",
+						":productId"
+					],
+					"variable": [
+						{
+							"key": "productId",
+							"value": "P-000005"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 - ok",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1234/product/:productId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1234",
+							"path": [
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "P-000005"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 11 Aug 2023 16:49:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "content-length",
+							"value": "60"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"P-000005\",\n    \"title\": \"Soda\",\n    \"description\": \"Cola flavor\"\n}"
+				}
+			]
+		}
+	]
+}
